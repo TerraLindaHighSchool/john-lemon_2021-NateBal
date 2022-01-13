@@ -32,11 +32,11 @@ public class PlayerMovement : MonoBehaviour
 
         // Set animator to walking or idle depending on user input
         isWalking = !(Mathf.Approximately(horizontal, 0f) && Mathf.Approximately(vertical, 0f));
-        animator.SetBool("isWalking", isWalking);
+        animator.SetBool("IsWalking", isWalking);
 
         // Assign rotation towards move direction
         Vector3 desiredDirection = Vector3.RotateTowards(transform.position, moveDirection,
-            turnSpeed * Time.deltaTime, 0f);
+            turnSpeed * Time.deltaTime, 0f); 
         rotation = Quaternion.LookRotation(desiredDirection);
     }
 
